@@ -76,8 +76,8 @@ var Helpers = {
         var bottomBound = topBound + cords.height;
         var offsetY = y - this.props.offset;
         var to = this.props.to;
-        var isInside = (offsetY >= topBound && offsetY <= bottomBound);
-        var isOutside = (offsetY < topBound || offsetY > bottomBound);
+        var isInside = (offsetY >= topBound && offsetY < bottomBound);
+        var isOutside = (offsetY < topBound || offsetY >= bottomBound);
         var activeLink = scroller.getActiveLink();
 
         if (isOutside && activeLink === to) {
@@ -150,8 +150,8 @@ var Helpers = {
 
 
             var offsetY = y - this.props.offset;
-            var isInside = (offsetY >= Math.floor(elemTopBound) && offsetY <= Math.floor(elemBottomBound));
-            var isOutside = (offsetY < Math.floor(elemTopBound) || offsetY > Math.floor(elemBottomBound));
+            var isInside = (offsetY >= Math.floor(elemTopBound) && offsetY < Math.floor(elemBottomBound));
+            var isOutside = (offsetY < Math.floor(elemTopBound) || offsetY >= Math.floor(elemBottomBound));
             var activeLink = scroller.getActiveLink();
 
             if (isOutside && activeLink === to) {
